@@ -25,7 +25,7 @@
 
 Request example:
 ```sh
-`GET /ping`
+GET /ping
 ```
 
 Response example:
