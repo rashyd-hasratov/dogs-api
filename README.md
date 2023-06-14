@@ -15,10 +15,9 @@
 3. Run `npm install` in your terminal to download all the packages and dependencies
 4. Run `npm run dev` in your terminal to start the development server
 5. Enjoy!
-<br/>
-- To clear the database run `npm run seed:undo`<br/>
-- To fill the database with some initial data run `npm run seed`<br/>
-- To test the api run `npm run test`
+- To clear the database run npm run seed:undo<br/>
+- To fill the database with some initial data run npm run seed<br/>
+- To test the api run npm run test
 
 ## Docs
 
