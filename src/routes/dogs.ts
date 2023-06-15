@@ -1,13 +1,13 @@
-import express, {Request, Response} from 'express';
+import express from 'express';
 
 import {
   ping,
   getDogs,
-  addDog,
+  createDog,
 } from '../controllers/dogs';
 
 export const router = express.Router();
 
 router.get('/ping', ping);
 router.get('/dogs', getDogs);
-router.post('/dog', addDog);
+router.post('/dog', createDog);

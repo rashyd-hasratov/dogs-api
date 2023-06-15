@@ -1,4 +1,4 @@
-import express, { Express, Request, Response } from 'express';
+import express from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
 
@@ -6,7 +6,7 @@ import { router } from './routes/dogs';
 
 dotenv.config();
 
-const app: Express = express();
+const app = express();
 const port = Number(process.env.PORT) || 3333;
 
 app.use(cors());

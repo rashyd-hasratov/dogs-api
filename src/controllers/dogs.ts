@@ -1,15 +1,15 @@
-import { Request, Response } from "express";
-import { FindOptions } from "sequelize";
+import { Request, Response } from 'express';
+import { FindOptions } from 'sequelize';
 
-import { formatQueryToKey } from "../helpers/formatQueryToKey";
-import { isCorrectSortOder } from "../helpers/isCorrectSortOrder";
-import { isNonEmptyString } from "../helpers/isNonEmptyString";
-import { isNonNegativeNumber } from "../helpers/isNonNegativeNumber";
+import { formatQueryToKey } from '../helpers/formatQueryToKey';
+import { isCorrectSortOder } from '../helpers/isCorrectSortOrder';
+import { isNonEmptyString } from '../helpers/isNonEmptyString';
+import { isNonNegativeNumber } from '../helpers/isNonNegativeNumber';
 
 import {
-  get,
+  getAll,
   getByName,
-  add,
+  create,
 } from '../services/dogs';
 
 export const ping = (req: Request, res: Response) => {
@@ -30,7 +30,7 @@ export const getDogs = async (req: Request, res: Response) => {
   const limitToNum = Number(limit);
 
   if (!isCorrectSortOder(orderToString)
-    || !isNonNegativeNumber(pageNumberToNum) 
+    || !isNonNegativeNumber(pageNumberToNum)
     || (limit && !isNonNegativeNumber(limitToNum))
   ) {
     res.sendStatus(400);
@@ -52,7 +52,7 @@ export const getDogs = async (req: Request, res: Response) => {
   }
 
   try {
-    const foundDogs = await get(findOptions);
+    const foundDogs = await getAll(findOptions);
 
     res.send(foundDogs);
   } catch {
@@ -60,7 +60,7 @@ export const getDogs = async (req: Request, res: Response) => {
   }
 };
 
-export const addDog = async (req: Request, res: Response) => {
+export const createDog = async (req: Request, res: Response) => {
   const {
     name,
     color,
@@ -91,7 +91,7 @@ export const addDog = async (req: Request, res: Response) => {
       return;
     }
 
-    const createdDog = await add(name, color, tailLengthToNum, weightToNum);
+    const createdDog = await create(name, color, tailLengthToNum, weightToNum);
 
     res.statusCode = 201;
     res.send(createdDog);

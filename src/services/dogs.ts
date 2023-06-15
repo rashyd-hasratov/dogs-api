@@ -1,10 +1,10 @@
-import { FindOptions } from "sequelize";
+import { FindOptions } from 'sequelize';
 
 import { Dog } from '../models/dogs';
 
-export const get = async (options: FindOptions) => {
+export const getAll = async (options: FindOptions) => {
   const foundDogs = await Dog.findAll(options);
-  
+
   return foundDogs;
 };
 
@@ -18,13 +18,13 @@ export const getByName = async (name: string) => {
   return foundDog;
 };
 
-export const add = async (
+export const create = async (
   name: string,
   color: string,
   tail_length: number,
   weight: number,
 ) => {
-  const createdDog = await Dog.create({name, color, tail_length, weight});
+  const createdDog = await Dog.create({ name, color, tail_length, weight });
 
   return createdDog;
 };

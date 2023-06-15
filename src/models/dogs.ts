@@ -1,4 +1,4 @@
-import { sequelize } from '../config/db';
+import { sequelize } from '../../config/db';
 import {
   DataTypes,
   Model,
@@ -40,6 +40,10 @@ export const Dog = sequelize.define<DogModel>('dog', {
   updatedAt: false,
 });
 
-Dog.sync().then(() => {
-  console.log("Dog Model synced");
-});
+Dog.sync()
+  .then(() => {
+    console.log('Dog Model synced');
+  })
+  .catch((error) => {
+    console.log(error)
+  });
