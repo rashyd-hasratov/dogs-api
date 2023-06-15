@@ -5,8 +5,8 @@ module.exports = {
   async up(queryInterface) {
     try {
       await queryInterface.bulkInsert('dogs', [
-        { name: 'Asdf', color: 'red', tail_length: 6, weight: 20 },
-        { name: 'Bnm', color: 'black&white', tail_length: 8, weight: 12 },
+        { name: 'Neo', color: 'red & amber', tail_length: 22, weight: 32 },
+        { name: 'Jessy', color: 'black & white', tail_length: 7, weight: 14 },
       ]);
     } catch (error) {
       console.log(error);
