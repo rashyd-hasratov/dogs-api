@@ -8,6 +8,10 @@
 - JavaScript<br/>
 - Jest & Supertest for unit tests
 
+## Deployment
+- [Postgresql](https://www.postgresql.org/) database was deployed on [Railway](https://railway.app/) platform
+- The API was deployed on [Railway](https://railway.app/) platform. [Try it!](https://dogs-api-production-2142.up.railway.app/)
+
 ## Installation
 
 1. Clone (or fork and clone) the repository
